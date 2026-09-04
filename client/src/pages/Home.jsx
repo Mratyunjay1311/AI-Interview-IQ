@@ -1,10 +1,12 @@
 import React from 'react'
+import Navbar from '../components/Navbar.jsx'
 
 function Home() {
   return (
-    <div className="min-h-screen bg-red-500 flex items-center justify-center">
-      <h1 className="text-5xl font-bold text-white">
-        Tailwind Working
+    <div >
+      <h1> 
+        <Navbar/>
+     
       </h1>
     </div>
   )
