@@ -8,7 +8,7 @@ const isAuth = async (req,res,next) => {
         console.log("TOKEN TYPE:", typeof token)
 
         if(!token){
-            return res.status(400).json({message:"User does not have a token!!!"})
+            return res.status(401).json({message:"User is not authenticated!"})
         }
 
         const verifyToken = jwt.verify(token,process.env.JWT_SECRET)
