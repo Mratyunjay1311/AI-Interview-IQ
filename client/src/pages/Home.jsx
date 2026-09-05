@@ -1,13 +1,58 @@
 import React from 'react'
 import Navbar from '../components/Navbar.jsx'
+import { useSelector } from 'react-redux'
+import {motion} from 'motion/react'
 
+import {
+  BsRobot,
+  BsMic,
+  BsClock,
+  BsBarChart,
+  BsFileEarmarkText 
+ } from 'react-icons/bs'
+
+ import { HiSparkles } from 'react-icons/hi'
 function Home() {
+
+  const {userData} = useSelector((state)=>state.user)
   return (
-    <div >
-      <h1> 
+    <div className='min-h-screen bg-[#f3f3f3] flex flex-col'>
+      
         <Navbar/>
+
+        <div className='flex-1 px-6 py-20'>
+<div className='flex justify-center mb-6'>
+
+  <div className='bg-gray-200 text-gray-600 text-sm px-4 py-2 rounded-full flex items-center gap-2'>
+
+      <HiSparkles size={16} className='bg-green-50 text-green-600'/>
+      AI Powered Smart Interview Platfrom
+  </div>
+
+    
+
+</div>
+     <div className='text-center mb-28'>
+      <motion.h1 initial={{opacity:0,y:30}}
+      animate={{opacity:1,y:0}}
+      transition={{duration:0.6}}
+      
+      className='text-4xl md:text-6xl font-semibold leading-tight max-w-4xl mx-auto'>
+
+        Practice Interviews With
+        <span className='relative inline-block'>
+          <span className='bg-green-50 text-green-600 px-5 py-1 rounded-full'>
+            AI Intelligence
+          </span>
+        </span>
+      </motion.h1>
+      <motion.p >
+
+      </motion.p>
+     </div>        
+        </div>
      
-      </h1>
+      
     </div>
   )
 }

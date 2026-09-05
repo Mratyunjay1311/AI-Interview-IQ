@@ -15,6 +15,7 @@ const dispatch = useDispatch()
     const getUser = async () => {
       try {
         const result = await axios.get(serverUrl+'/api/user/currentUser',{withCredentials:true})
+        console.log("Current User:",result.data)
         dispatch(setUserData(result.data))
       } catch (error) {
         console.log(error)
